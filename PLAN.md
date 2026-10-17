@@ -24,6 +24,7 @@ Agreed 2026-10-16. Update this file when decisions change.
 - [x] Job tools: new_job (spec template), finalize
 - [x] Agent + skill + references (design rules, libraries, OpenSCAD patterns, report template)
 - [x] Examples: controller enclosure, rod clip, tolerance test
+- [x] Toolchain set up on the Mac (OpenSCAD snapshot 2026.10.11, Blender 3.6.4) and `tools/selftest.sh` passing (2026-10-16)
 - [ ] First real job run end to end on the Mac
 - [ ] Print `examples/tolerance_test`; record results in `config/printer.json`, `CLR_*` in print_lib, `$slop`
 

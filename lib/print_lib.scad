@@ -148,14 +148,19 @@ module enclosure_base(inner, wall = 2, floor = 2, r = 3, m = "M3", boss_d = 0) {
         translate([wall, wall, floor]) linear_extrude(inner[2] + EPS)
           rounded_rect([inner[0], inner[1]], max(r - wall, 0.5));
       }
-      // corner bosses, hulled into the corner for stiffness
-      for (p = enc_boss_xy(inner, wall, bd))
-        hull() {
-          translate([p[0], p[1], 0]) cylinder(d = bd, h = outer[2], $fn = fn_for(bd));
-          translate([p[0] < outer[0] / 2 ? wall : outer[0] - wall - EPS,
-                     p[1] < outer[1] / 2 ? wall : outer[1] - wall - EPS, 0])
-            cube([EPS, EPS, outer[2]]);
-        }
+      // corner bosses, hulled into the corner for stiffness. The anchor sits mid-wall so the
+      // hull's flat sides cross the wall instead of lying on its inner face (coincident faces
+      // leave zero-thickness slivers); clipping to the shell keeps the hull inside the outer rounding.
+      intersection() {
+        rounded_box(outer, r);
+        union() for (p = enc_boss_xy(inner, wall, bd))
+          hull() {
+            translate([p[0], p[1], 0]) cylinder(d = bd, h = outer[2], $fn = fn_for(bd));
+            translate([p[0] < outer[0] / 2 ? wall / 2 : outer[0] - wall / 2 - EPS,
+                       p[1] < outer[1] / 2 ? wall / 2 : outer[1] - wall / 2 - EPS, 0])
+              cube([EPS, EPS, outer[2]]);
+          }
+      }
     }
     for (p = enc_boss_xy(inner, wall, bd))
       translate([p[0], p[1], 0]) heatset_cut(m, outer[2]);
