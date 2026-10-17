@@ -14,6 +14,7 @@ brew install --cask openscad@snapshot        # development snapshot: Manifold ba
 ./setup.sh                                   # creates .venv, installs Python deps, runs doctor
 ```
 If OpenSCAD is somewhere unusual, set `OPENSCAD_BIN=/path/to/openscad`.
+Then run `tools/selftest.sh`: it builds every example and fit-checks the enclosure (should end with SELFTEST PASSED).
 Run `.venv/bin/python tools/doctor.py` any time something will not build.
 
 ## Using it
@@ -38,6 +39,7 @@ or "use the print-modeler agent to ...". The agent:
 | `tools/fit_check.py a_installed.stl b_installed.stl` | interference and minimum gap between mating parts |
 | `tools/finalize.py jobs/x` | deliver parts + previews + REPORT.md to the spec's `output_dir` |
 | `tools/doctor.py` | toolchain diagnosis |
+| `tools/selftest.sh` | build all examples + fit check; run after setup or upgrades |
 
 ## First thing to print
 `examples/tolerance_test` (≈14 g PLA). Try each peg in each hole and update `clearances_mm`

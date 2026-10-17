@@ -94,6 +94,7 @@ def main():
         name = part or src.stem
         out = outdir / f"{name}.{a.format}"
         code, log, secs = run_openscad(bin_, src, out, a.defines, part)
+        (outdir / f"{name}.log").write_text(log)
         notes = summarize_log(log)
         print(f"== {name}: openscad exit {code} in {secs:.1f}s -> {out}")
         if notes:
