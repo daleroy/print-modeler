@@ -1,0 +1,42 @@
+{
+  "printer": "Bambu Lab P2S",
+  "build_volume_mm": [256, 256, 256],
+  "safe_margin_mm": 5,
+  "nozzle_mm": 0.4,
+  "default_layer_mm": 0.2,
+  "line_width_mm": 0.42,
+  "max_overhang_deg": 45,
+  "max_bridge_mm": 25,
+  "min_wall_mm": 0.8,
+  "recommended_wall_mm": 1.6,
+  "min_feature_mm": 0.6,
+  "min_emboss_text_height_mm": 4,
+  "clearances_mm": {
+    "press_fit": 0.10,
+    "snug_fit": 0.15,
+    "slide_fit": 0.25,
+    "loose_fit": 0.40,
+    "print_in_place_gap": 0.35
+  },
+  "hole_compensation_mm": 0.15,
+  "materials": {
+    "PLA":  {"density_g_cm3": 1.24, "notes": "Default. Indoor, rigid, creeps under load or heat (>50C)."},
+    "PETG": {"density_g_cm3": 1.27, "notes": "Tougher, mild heat/UV. Good for enclosures and outdoor-ish parts."},
+    "ASA":  {"density_g_cm3": 1.07, "notes": "Outdoor/UV, heat to ~90C. Enclosed chamber helps; expect slight shrink."},
+    "ABS":  {"density_g_cm3": 1.04, "notes": "Heat-resistant, warps. Prefer ASA for outdoor."},
+    "TPU":  {"density_g_cm3": 1.21, "notes": "Flexible. Avoid tight tolerances and long bridges."},
+    "PETG-CF": {"density_g_cm3": 1.30, "notes": "Stiff functional parts. Hardened nozzle required."}
+  },
+  "default_material": "PLA",
+  "default_infill": 0.15,
+  "fasteners": {
+    "heatset_hole_d": {"M2": 3.2, "M2.5": 3.6, "M3": 4.0, "M4": 5.6},
+    "heatset_depth":  {"M2": 4.0, "M2.5": 4.5, "M3": 5.7, "M4": 8.1},
+    "clearance_d":    {"M2": 2.4, "M2.5": 2.9, "M3": 3.4, "M4": 4.5},
+    "selftap_d":      {"M2": 1.8, "M2.5": 2.2, "M3": 2.6, "M4": 3.5},
+    "head_d":         {"M2": 4.2, "M2.5": 5.0, "M3": 6.0, "M4": 8.0},
+    "nut_flats":      {"M2": 4.3, "M2.5": 5.3, "M3": 5.8, "M4": 7.3},
+    "nut_thick":      {"M2": 1.8, "M2.5": 2.2, "M3": 2.6, "M4": 3.4}
+  },
+  "_note": "Heat-set dimensions assume common tapered brass inserts (e.g. Ruthex-style). Measure yours and edit. Print a tolerance test first and update clearances_mm with measured results."
+}

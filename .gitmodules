@@ -1,0 +1,15 @@
+[submodule "vendor/BOSL2"]
+	path = vendor/BOSL2
+	url = https://github.com/BelfrySCAD/BOSL2
+[submodule "vendor/YAPP_Box"]
+	path = vendor/YAPP_Box
+	url = https://github.com/mrwheel/YAPP_Box
+[submodule "vendor/threads-scad"]
+	path = vendor/threads-scad
+	url = https://github.com/rcolyer/threads-scad
+[submodule "vendor/catchnhole"]
+	path = vendor/catchnhole
+	url = https://github.com/mmalecki/catchnhole
+[submodule "vendor/Round-Anything"]
+	path = vendor/Round-Anything
+	url = https://github.com/Irev-Dev/Round-Anything

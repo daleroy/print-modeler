@@ -1,0 +1,19 @@
+# Build outputs (regenerate with tools/build_scad.py)
+**/out/
+
+# Private reference material: photos of people (especially kids) NEVER go in git.
+private/
+jobs/**/photos/
+jobs/**/private/
+
+# Large meshes brought in as job inputs (keep the path in spec.md instead)
+jobs/**/inputs/*.stl
+jobs/**/inputs/*.3mf
+jobs/**/inputs/*.glb
+jobs/**/inputs/*.obj
+
+# Python / OS
+__pycache__/
+*.pyc
+.venv/
+.DS_Store

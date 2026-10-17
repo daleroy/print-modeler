@@ -1,0 +1,8 @@
+{
+  "max_auto_iterations": 0,
+  "_max_auto_iterations": "Revision rounds the agent may run after the first draft without checking in. 0 = check in after every draft. Raise once the loop has earned trust.",
+  "max_fix_attempts_per_problem": 2,
+  "always_check_in_after_first_draft": true,
+  "ask_about_slicing_at_handoff": true,
+  "default_output_format": "stl"
+}
