@@ -1,6 +1,10 @@
 # Build outputs (regenerate with tools/build_scad.py)
 **/out/
 
+# Job folders live in their own private repo nested at jobs/ (see README)
+jobs/*
+!jobs/.gitkeep
+
 # Private reference material: photos of people (especially kids) NEVER go in git.
 private/
 jobs/**/photos/
@@ -17,3 +21,6 @@ __pycache__/
 *.pyc
 .venv/
 .DS_Store
+
+# Bambu Studio CLI writes this next to wherever it runs
+result.json

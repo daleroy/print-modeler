@@ -14,6 +14,7 @@ brew install --cask openscad@snapshot        # development snapshot: Manifold ba
 ./setup.sh                                   # creates .venv, installs Python deps, runs doctor
 ```
 If OpenSCAD is somewhere unusual, set `OPENSCAD_BIN=/path/to/openscad`.
+To keep jobs in git, make `jobs/` its own (private) repo: the public repo ignores everything in it.
 Then run `tools/selftest.sh`: it builds every example and fit-checks the enclosure (should end with SELFTEST PASSED).
 Run `.venv/bin/python tools/doctor.py` any time something will not build.
 
@@ -57,7 +58,7 @@ vendor/                                BOSL2, YAPP_Box, threads-scad, catchnhole
 tools/                                 build, render, check, fit, job tools
 templates/spec.md                      job spec template
 examples/                              controller_enclosure, rod_clip, tolerance_test
-jobs/                                  your jobs (out/ folders are git-ignored)
+jobs/                                  your jobs: a separate private git repo, ignored here
 private/                               git-ignored; for reference photos if you keep any here
 ```
 
